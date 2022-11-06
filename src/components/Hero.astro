@@ -1,44 +1,29 @@
----
-
----
-
-<div class="container border border-black">
-    <div class="left-text">
-        <p class="heading">Family Dogs for Dog Families</p>
-        <p class="subtitle">A Frenchie family for over 10 years</p>
-    </div>
-    <div class="right-image">
-        <img src="/hero-image.jpg"/>
+<div class="relative bg-gray-50">     
+    <div class="lg:relative">
+      <div class="mx-auto w-full max-w-7xl pt-16 pb-10 text-center lg:py-48 lg:text-left">
+        <div class="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+            <span class="block xl:inline">Family Dogs For</span>
+            <span class="block text-bailey-50 xl:inline">Dog Families</span>
+          </h1>
+          <p class="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">A Frenchie family for over 10 years.</p>
+          <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
+            <form action="#" class="mt-12 sm:flex sm:w-full sm:max-w-lg">
+                <div class="min-w-0 flex-1">
+                  <label for="hero-email" class="sr-only">Email address</label>
+                  <input id="hero-email" type="email" class="block w-full rounded-md border border-gray-300 px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Enter your email">
+                </div>
+                <div class="mt-4 sm:mt-0 sm:ml-3">
+                  <button type="submit" class="block w-full rounded-md border border-transparent bg-bailey-50 px-5 py-3 text-base font-medium text-white shadow hover:bg-bailey-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10">Get Puppy Info.</button>
+                </div>
+              </form>            
+          </div>
+        </div>
+      </div>
+      <div class="relative h-64 w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
+        <img class="absolute inset-0 h-full w-full object-cover" src="/hero-image.jpg" alt="sleeping french bulldog puppies">
+      </div>
     </div>
 </div>
 
-<style>
-    img {        
-        width: 624px;    
-        height: 658px;     
-    }
-
-    .container {
-        display: flex;
-        height: 661px;    
-        width: 1440px;
-    }
-
-    .left-text {
-        width: 60%;
-    }
-
-    .heading {
-        font-size: 66px;
-        width: 555px;
-        height: 152px;
-    }
-
-    .subtitle {
-        font-size: 1.5rem;
-    }
-
-    .right-image {
-        width: 40%;                
-    }
-</style>
+  
