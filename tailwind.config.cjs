@@ -10,6 +10,16 @@ module.exports = {
 				}
 			}
 		},
+		keyframes: {
+			'open-menu': {
+				'0%' : {opacity: '0'},
+				'50%' : {opacity: '50'},
+				'100%' : {opacity: '100'},
+			},			
+		},
+		animation: {
+			'open-menu': 'open-menu .3s ease-in-out forwards',
+		}
 	},
 	plugins: [],
 }
