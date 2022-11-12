@@ -9,8 +9,8 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Bailey French Bulldogs">
-	<Nav/>
-	<main class="main-grid">				
+	<Nav />
+	<main class="main-grid">
 		<div class="hero">
 			<Hero />
 		</div>
@@ -18,26 +18,21 @@ import Footer from "../components/Footer.astro";
 			<Blurb />
 		</div>
 		<div class="testamonials">
-			<Testamonials/>
+			<Testamonials />
 		</div>
 		<div class="contact">
-			<Contact/>
+			<Contact />
 		</div>
 		<div class="footer">
-			<Footer/>
+			<Footer />
 		</div>
 	</main>
 </Layout>
-
 <script>
-    document.querySelector('.hamburger')?.addEventListener('click', () => {
-      document.querySelector('.nav-links')?.classList.toggle('hidden');
-    });
-
-	document.querySelector('.nav-links')?.addEventListener('click', () => {
-		document.querySelector('.nav-links')?.classList.toggle('hidden');
-	});
-  </script>
+	
+	import "../scripts/index.js";
+	import "../scripts/nav.js";
+</script>
 
 <style>
 	main {
