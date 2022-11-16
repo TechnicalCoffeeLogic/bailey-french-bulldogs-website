@@ -2,13 +2,70 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import BlogCard from "../components/Blog-Card.astro";
+
+let PROJECT_ID = "2t63ykhm";
+let DATASET = "production";
+let QUERY = encodeURIComponent('*[_type == "post"]');
+let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+let title: string = "";
+let author: string = "";
+let date: number = Date.now();
+
+
+try {
+    let response = await fetch(URL);
+    let result = await response.json();
+    title = result.result[0].title;
+    date = result.result[0]._createdAt;
+
+    // get author
+    try {
+        let authorID = result.result[0].author._ref;
+        let AUTHOR_QUERY = encodeURIComponent(`*[_type=="author" && _id=="${authorID}"]`);        
+        let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${AUTHOR_QUERY}`;
+        let authorResp = await fetch(URL);
+        let authorResult = await authorResp.json();        
+        console.log(authorResult.result[0].name);
+        author = authorResult.result[0].name;
+    }
+    catch (error: any){
+        console.error(error);
+    }
+} catch (error: any) {
+    console.error(error);
+}
 ---
 
 <Layout title="Bailey French Bulldogs">
     <Nav />
-    <main class=" pt-16">
-        
-           
+    <main class="pt-16">
+        <div
+            class="relative bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+        >
+            <div class="absolute inset-0">
+                <div class="h-1/3 bg-white sm:h-2/3"></div>
+            </div>
+            <div class="relative mx-auto max-w-7xl">
+                <div class="text-center">
+                    <h2
+                        class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                    >
+                        Bailey French Bulldogs <span class=" text-bailey-50">Blog</span>
+                    </h2>
+                    <p
+                        class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4"
+                    >
+                        Some description here
+                    </p>
+                </div>
+                <div
+                    class="mx-auto mt-12 grid max-w-lg gap-5"
+                >
+                    <BlogCard title={title} author={author} date={date}/>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <Footer />
