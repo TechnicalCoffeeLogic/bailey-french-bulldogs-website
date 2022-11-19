@@ -1,0 +1,103 @@
+---
+import Footer from "../../components/Footer.astro";
+import Nav from "../../components/Nav.astro";
+import Layout from "../../layouts/Layout.astro";
+
+interface iPost {
+    ms: number;
+    query: string;
+    result: [iResult];
+}
+
+interface iResult {
+    _createdAt?: string,
+    _id?: string,
+    _rev?: string,
+    _type?: string,
+    _updatedAt?: string,
+    author?: [Object],
+    body?: [Object],
+    categories?: [Object],
+    mainImage?: [Object],
+    publishedAt?: string,
+    shortDesc?: string,
+    slug?: [Object],
+    title?: string
+}
+
+interface iPage {
+    title?: string,
+    body?: string,
+    image?: string
+}
+
+const { slug } = Astro.params;
+const SLUG_QUERY = encodeURIComponent(
+    `*[_type=="post" && slug.current == "${slug}"]`
+);
+const PROJECT_ID = "2t63ykhm";
+const DATASET = "production";
+const SLUG_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${SLUG_QUERY}`;
+
+let post: iPage = {};
+let resp: iPost;
+
+try {
+    let response = await fetch(SLUG_URL);
+    resp = await response.json();
+    
+    // set data for blog post
+    for (let data: iResult of resp.result){
+        if (data.title){
+            post.title = data.title;    
+        }
+    }    
+
+} catch (err: any) {
+    console.error(err);
+}
+---
+
+<Layout title="Bailey French Bulldogs">
+    <Nav />
+    <main class="pt-20">
+        <div class="relative overflow-hidden bg-white py-16">
+            <div class="relative px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto text-lg">
+                    <h1>
+                        <span class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+                            {post.title}
+                        </span>
+                    </h1>
+                    <p class="mt-8 text-xl text-gray-500">
+                        Aliquet nec orci mattis amet quisque ullamcorper neque,
+                        nibh sem. At arcu, sit dui mi, nibh dui, diam eget
+                        aliquam. Quisque id at vitae feugiat egestas ac. Diam
+                        nulla orci at in viverra scelerisque eget. Eleifend
+                        egestas fringilla sapien.
+                    </p>
+                </div>
+                <div class="mx-auto mt-6 text-gray-500">
+                    <p>
+                        Faucibus commodo massa rhoncus, volutpat. <strong
+                            >Dignissim</strong
+                        > sed <strong>eget risus enim</strong>. Mattis mauris
+                        semper sed amet vitae sed turpis id. Id dolor praesent
+                        donec est. Odio penatibus risus viverra tellus varius
+                        sit neque erat velit. Faucibus commodo massa rhoncus,
+                        volutpat. Dignissim sed eget risus enim. <a href="#"
+                            >Mattis mauris semper</a
+                        > sed amet vitae sed turpis id.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <Footer />
+    </footer>
+</Layout>
+
+<script>
+    import "../../scripts/nav";
+</script>
