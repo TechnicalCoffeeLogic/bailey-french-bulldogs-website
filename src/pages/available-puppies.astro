@@ -1,0 +1,106 @@
+---
+import { toHTML } from "@portabletext/to-html";
+import { myPortableTextComponents } from "../scripts/PortableTextComponents";
+import { PROJECT_ID, DATASET } from "../scripts/sanity-config";
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+interface iPuppies {
+  ms?: number;
+  query?: string;
+  result?: [iPuppy];
+}
+
+interface iPuppy {
+  _createdAt?: string;
+  _id?: string;
+  _rev?: string;
+  _type?: string;
+  _updatedAt?: string;
+  birthday?: string;
+  color?: string;
+  dad?: string;
+  markings?: string;
+  mom?: string;
+  puppyName?: string;
+  puppyPicture?: {
+    _type?: string;
+    asset?: {
+      _ref?: string;
+      _type?: string;
+    };
+  };
+}
+
+interface iPup {
+  name?: string;
+  birthday?: string;
+  pic?: string;
+  color?: string;
+  markings?: string;
+  mom?: string;
+  dad?: string;
+}
+
+const PUPPIES_QUERY = encodeURIComponent(`*[_type == "puppy"]`);
+const PUPPIES_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${PUPPIES_QUERY}`;
+let puppies: iPuppies;
+let puppyArray = [];
+
+try {
+  let response = await fetch(PUPPIES_URL);
+  let result = await response.json();
+
+  if (result !== null) {
+    let puppies = result;
+
+    for (let puppy: iPuppy of puppies.result) {
+      let pup: iPup = {};
+      pup.birthday = puppy.birthday;
+      pup.color = puppy.color;
+      pup.dad = puppy.dad;
+      pup.mom = puppy.mom;
+      pup.name = puppy.puppyName;
+
+      let tmpSrc = puppy.puppyPicture?.asset?._ref;
+      tmpSrc = tmpSrc.replace("image-", "");
+      tmpSrc = tmpSrc.replace("-jpg", ".jpg");
+      pup.pic = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
+      puppyArray.push(pup);
+    }
+  }
+} catch (err: any) {
+  console.error(err);
+}
+---
+
+<Layout title="Bailey French Bulldogs">
+  <Nav />
+  <main>
+    <div class="bg-white">
+      <div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1
+            class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50"
+          >
+            Available Puppies
+          </h1>
+          <div> {puppyArray.map((pup: iPup) =>(
+            /** 
+             *   TODO : Add a puppy component that takes in the iPup interface here
+             *   TODO : make image of puppues circular like the about us page
+             */  
+            console.log(pup)
+          ))
+        } </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import "../scripts/nav";
+</script>

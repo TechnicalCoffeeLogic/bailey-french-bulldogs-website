@@ -1,179 +1,156 @@
 ---
 import { toHTML } from "@portabletext/to-html";
+import { myPortableTextComponents } from "../../scripts/PortableTextComponents";
+import { PROJECT_ID, DATASET } from "../../scripts/sanity-config";
 import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
 import Layout from "../../layouts/Layout.astro";
 
 interface iPost {
-    ms: number;
-    query: string;
-    result: [iResult];
+  ms: number;
+  query: string;
+  result: [iResult];
 }
 
 interface iResult {
-    _createdAt?: string;
-    _id?: string;
-    _rev?: string;
+  _createdAt?: string;
+  _id?: string;
+  _rev?: string;
+  _type?: string;
+  _updatedAt?: string;
+  author?: {
+    _ref?: string;
     _type?: string;
-    _updatedAt?: string;
-    author?: {
-        _ref?: string;
-        _type?: string;
+  };
+  body?: [Object];
+  categories?: [Object];
+  mainImage?: {
+    _type?: string;
+    asset?: {
+      _ref?: string;
+      _type?: string;
     };
-    body?: [Object];
-    categories?: [Object];
-    mainImage?: {
-        _type?: string;
-        asset?: {
-            _ref?: string;
-            _type?: string;
-        };
-    };
-    publishedAt?: string;
-    shortDesc?: string;
-    slug?: [Object];
-    title?: string;
+  };
+  publishedAt?: string;
+  shortDesc?: string;
+  slug?: [Object];
+  title?: string;
 }
 
 interface iImage {
-    _key?: string;
+  _key?: string;
+  _type?: string;
+  asset?: {
+    _ref?: string;
     _type?: string;
-    asset?: {
-        _ref?: string;
-        _type?: string;
-    };
-    crop?: {
-        _type?: string;
-        bottom?: number;
-        left?: number;
-        rigth?: number;
-        top?: number;
-    };
-    hotspot?: {
-        _type?: string;
-        height?: number;
-        width?: number;
-        x?: number;
-        y?: number;
-    };
+  };
+  crop?: {
+    _type?: string;
+    bottom?: number;
+    left?: number;
+    rigth?: number;
+    top?: number;
+  };
+  hotspot?: {
+    _type?: string;
+    height?: number;
+    width?: number;
+    x?: number;
+    y?: number;
+  };
 }
 
 interface iPage {
-    title?: string;
-    body?: string;
-    image?: string;
-    author?: string;
+  title?: string;
+  body?: string;
+  image?: string;
+  author?: string;
 }
 
 const { slug } = Astro.params;
 const SLUG_QUERY = encodeURIComponent(
-    `*[_type=="post" && slug.current == "${slug}"]`
+  `*[_type=="post" && slug.current == "${slug}"]`
 );
-const PROJECT_ID = "2t63ykhm";
-const DATASET = "production";
-const SLUG_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${SLUG_QUERY}`;
 
-const myPortableTextComponents = {
-    types: {
-        image: ({ value }) => {
-            let tmpImage: iImage = value;
-            let image: string = "";
-            let tmpSrc = tmpImage.asset?._ref;
-            if (tmpSrc) {
-                tmpSrc = tmpSrc.replace("image-", "");
-                tmpSrc = tmpSrc.replace("-jpg", ".jpg");
-                image = `<img src="https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}"/>`;
-            }
-            return image;
-        },
-        break: ({ value }) => `<br/><hr/><br/>`,
-    },
-};
+const SLUG_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${SLUG_QUERY}`;
 
 let post: iPage = {};
 let resp: iPost;
 
 try {
-    let response = await fetch(SLUG_URL);
-    resp = await response.json();
-    let firstTime = false;
+  let response = await fetch(SLUG_URL);
+  resp = await response.json();
+  let firstTime = false;
 
-    // set data for blog post
-    for (let data: iResult of resp.result) {
-        if (data.title) {
-            post.title = data.title;
-        }
-
-        if (data.body) {
-            for (let child of data.body) {
-                let text: any = child;
-                let tempText = toHTML(text, {
-                    components: myPortableTextComponents,
-                });
-
-                if (tempText == "<p></p>") {
-                    post.body += "<br/>";
-                } else {
-                    post.body += tempText;
-                }
-            }
-            post.body = post.body?.replace("undefined", "");
-        }
-
-        // main image
-        if (data.mainImage?.asset?._ref) {
-            let tmpSrc = data.mainImage.asset._ref;
-            tmpSrc = tmpSrc.replace("image-", "");
-            tmpSrc = tmpSrc.replace("-jpg", ".jpg");
-            post.image = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
-        }
-
-        // get author
-        let authorID = data.author?._ref;
-        let AUTHOR_QUERY = encodeURIComponent(
-            `*[_type=="author" && _id=="${authorID}"]`
-        );
-
-        let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${AUTHOR_QUERY}`;
-        let authorResp = await fetch(URL);
-        let authorResult = await authorResp.json();
-        post.author = authorResult.result[0].name;
+  // set data for blog post
+  for (let data: iResult of resp.result) {
+    if (data.title) {
+      post.title = data.title;
     }
+
+    if (data.body) {
+      for (let child of data.body) {
+        let text: any = child;
+        let tempText = toHTML(text, {
+          components: myPortableTextComponents,
+        });
+
+        if (tempText == "<p></p>" || tempText == "") {
+          post.body += "<br/>";
+        } else {
+          post.body += tempText;
+        }
+      }
+      post.body = post.body?.replace("undefined", "");
+    }
+
+    // main image
+    if (data.mainImage?.asset?._ref) {
+      let tmpSrc = data.mainImage.asset._ref;
+      tmpSrc = tmpSrc.replace("image-", "");
+      tmpSrc = tmpSrc.replace("-jpg", ".jpg");
+      post.image = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
+    }
+
+    // get author
+    let authorID = data.author?._ref;
+    let AUTHOR_QUERY = encodeURIComponent(
+      `*[_type=="author" && _id=="${authorID}"]`
+    );
+
+    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${AUTHOR_QUERY}`;
+    let authorResp = await fetch(URL);
+    let authorResult = await authorResp.json();
+    post.author = authorResult.result[0].name;
+  }
 } catch (err: any) {
-    console.error(err);
+  console.error(err);
 }
 ---
 
 <Layout title="Bailey French Bulldogs">
-    <Nav />
-    <main class="bg-white">
-        <section class="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col">
-                <h1
-                    class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl"
-                >
-                    {post.title}
-                </h1>
-                <p
-                    class="block text-center text-lg font-semibold text-bailey-50"
-                >
-                    {post.author}
-                </p>
-                <div class="w-full flex justify-center py-4">
-                    <img src={post.image} class="rounded-lg" />
-                </div>
-                <article
-                    class="mx-auto mt-6 text-gray-500"
-                    set:html={post.body}
-                />
-            </div>
-        </section>
-    </main>
-    <footer>
-        <Footer />
-    </footer>
+  <Nav />
+  <main class="bg-white">
+    <section class="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col">
+        <h1
+          class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl"
+        >
+          {post.title}
+        </h1>
+        <p class="block text-center text-lg font-semibold text-bailey-50">
+          {post.author}
+        </p>
+        <div class="w-full flex justify-center py-4">
+          <img src={post.image} class="rounded-lg" />
+        </div>
+        <article class="mx-auto mt-6 text-gray-500" set:html={post.body} />
+      </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>
 
 <script>
-    import "../../scripts/nav";
+  import "../../scripts/nav";
 </script>
