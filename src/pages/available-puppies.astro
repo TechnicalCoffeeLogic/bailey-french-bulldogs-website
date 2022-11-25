@@ -1,10 +1,7 @@
 ---
-import { toHTML } from "@portabletext/to-html";
-import { myPortableTextComponents } from "../scripts/PortableTextComponents";
 import { PROJECT_ID, DATASET } from "../scripts/sanity-config";
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+import PuppyCard from "../components/puppy-card.astro";
 
 interface iPuppies {
   ms?: number;
@@ -59,6 +56,7 @@ try {
       let pup: iPup = {};
       pup.birthday = puppy.birthday;
       pup.color = puppy.color;
+      pup.markings = puppy.markings;
       pup.dad = puppy.dad;
       pup.mom = puppy.mom;
       pup.name = puppy.puppyName;
@@ -75,32 +73,41 @@ try {
 }
 ---
 
-<Layout title="Bailey French Bulldogs">
-  <Nav />
+<Layout
+  title="Availble puppies from Bailey French Bulldogs. A dog breeder who breeds family French Bulldogs for dog families."
+  metaDesc="Take a sneek peak at our available Frenchies and fall in love with you new French Bulldog family member."
+>
   <main>
     <div class="bg-white">
-      <div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div class="text-center">
           <h1
             class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50"
           >
             Available Puppies
           </h1>
-          <div> {puppyArray.map((pup: iPup) =>(
-            /** 
-             *   TODO : Add a puppy component that takes in the iPup interface here
-             *   TODO : make image of puppues circular like the about us page
-             */  
-            console.log(pup)
-          ))
-        } </div>
+          <ul>
+            {
+              puppyArray.map((pup: iPup) => (
+                /**
+                 *   TODO : Add a puppy component that takes in the iPup interface here
+                 *   TODO : make image of puppues circular like the about us page
+                 */ <PuppyCard
+                  name={pup.name}
+                  source={pup.pic}
+                  birthday={pup.birthday}
+                  color={pup.color}
+                  markings={pup.markings}
+                  mom={pup.mom}
+                  dad={pup.dad}
+                />
+              ))
+            }
+          </ul>
         </div>
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>
 
-<script>
-  import "../scripts/nav";
-</script>
+<script></script>

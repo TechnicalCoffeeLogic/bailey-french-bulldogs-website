@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
 import BlogCard from "../components/Blog-Card.astro";
 
 interface iPost {
@@ -74,8 +72,10 @@ try {
 }
 ---
 
-<Layout title="Bailey French Bulldogs">
-  <Nav />
+<Layout
+  title="A french bulldog blog by Bailey French Bulldogs."
+  metaDesc="Learn about what we care about when it comes to French Bulldogs."
+>
   <main class="pt-16">
     <div
       class="relative bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
@@ -88,7 +88,7 @@ try {
           <h2
             class="text-3xl font-bold tracking-tight text-bailey-50 sm:text-4xl"
           >
-            Bailey French Bulldogs <span class="text-gray-900">Blog</span>
+            Bailey French Bulldogs Blog
           </h2>
           <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
             Some description here
@@ -112,9 +112,6 @@ try {
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>
 
-<script>
-  import "../scripts/nav.js";
-</script>
+<script></script>

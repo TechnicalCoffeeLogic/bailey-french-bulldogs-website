@@ -1,75 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Nav from "../components/Nav.astro";
 import Blurb from "../components/blurb.astro";
 import Testamonials from "../components/Testamonials.astro";
 import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Bailey French Bulldogs">
-	<Nav />
-	<main class="main-grid">
-		<div class="hero">
-			<Hero />
-		</div>
-		<div class="blurb">
-			<Blurb />
-		</div>
-		<div class="testamonials">
-			<Testamonials />
-		</div>
-		<div class="contact">
-			<Contact />
-		</div>
-		<div class="footer">
-			<Footer />
-		</div>
-	</main>
+<Layout
+  title="Bailey French Bulldogs - breeding family French Bulldogs for dog families."
+  metaDesc="A Frenchie family for over 10 years that breeds family French Bulldogs for dog families."
+>
+  <main class="main-grid">
+    <div class="hero">
+      <Hero />
+    </div>
+    <div class="blurb">
+      <Blurb />
+    </div>
+    <div class="testamonials">
+      <Testamonials />
+    </div>
+    <div class="contact">
+      <Contact />
+    </div>
+  </main>
 </Layout>
 <script>
-	
-	import "../scripts/index.js";
-	import "../scripts/nav.js";
+  import "../scripts/index.js";
 </script>
 
 <style>
-	main {
-		margin: 0;
-		margin-top: 4rem;
-	}
-
-	/* @media screen and (min-width: 600px) {
-		.main-grid {
-			display: grid;
-			gap: 0, 0.5rem;
-			grid-template-columns: repeat(12, 1fr);
-			width: 100%;
-		}
-
-		.hero {
-			grid-column: 2 / 12;
-		}
-
-		.blurb {
-			grid-row: 2;
-			grid-column: 2 / 12;
-		}
-
-		.testamonials {
-			grid-row: 3;
-			grid-column: 2 / 12;
-		}
-
-		.contact {
-			grid-row: 4;
-			grid-column: 2 / 12;
-		}
-
-		.footer {
-			grid-row: 5;
-			grid-column: 2 / 12;
-		}
-	} */
+  main {
+    margin: 0;
+    margin-top: 4rem;
+  }
 </style>

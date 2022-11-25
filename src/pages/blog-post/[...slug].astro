@@ -2,8 +2,6 @@
 import { toHTML } from "@portabletext/to-html";
 import { myPortableTextComponents } from "../../scripts/PortableTextComponents";
 import { PROJECT_ID, DATASET } from "../../scripts/sanity-config";
-import Footer from "../../components/Footer.astro";
-import Nav from "../../components/Nav.astro";
 import Layout from "../../layouts/Layout.astro";
 
 interface iPost {
@@ -76,6 +74,8 @@ const SLUG_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${D
 
 let post: iPage = {};
 let resp: iPost;
+let title = "Blog";
+let shortDesc = "Short Desc.";
 
 try {
   let response = await fetch(SLUG_URL);
@@ -86,6 +86,11 @@ try {
   for (let data: iResult of resp.result) {
     if (data.title) {
       post.title = data.title;
+      title = post.title;
+    }
+
+    if (data.shortDesc) {
+      shortDesc = data.shortDesc;
     }
 
     if (data.body) {
@@ -128,8 +133,7 @@ try {
 }
 ---
 
-<Layout title="Bailey French Bulldogs">
-  <Nav />
+<Layout title={title} metaDesc={shortDesc} ogType={"article"}>
   <main class="bg-white">
     <section class="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col">
@@ -148,9 +152,6 @@ try {
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>
 
-<script>
-  import "../../scripts/nav";
-</script>
+<script></script>
