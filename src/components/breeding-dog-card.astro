@@ -1,5 +1,5 @@
 ---
-const {name, source, birthday, color, mom, dad} = Astro.props;
+const {name, source, age, color, gender, ownedBy, website} = Astro.props;
 ---
 <li class="bg-white pt-10 list-none">
   <div class="flex flex-col items-center w-100">
@@ -10,10 +10,11 @@ const {name, source, birthday, color, mom, dad} = Astro.props;
       alt={name}
     />
     <div class="w-100 flex flex-col text-gray-500">
-      <p>Birthday: {birthday}</p>
+      <p>Age: {age}</p>
       <p>Color: {color}</p>      
-      <p>Mom: {mom}</p>
-      <p>Dad: {dad}</p>
+      <p>Gender: {gender}</p>
+      <p>Owner: {ownedBy}</p>
+      <a href={website} target="_blank" class=" underline text-bailey-50">{website}</a>
     </div>
     <hr class="my-5 sm:w-96 w-full" />
   </div>

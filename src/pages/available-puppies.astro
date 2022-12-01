@@ -1,12 +1,21 @@
 ---
+import { toHTML } from "@portabletext/to-html";
+import { myPortableTextComponents } from "../scripts/PortableTextComponents";
 import { PROJECT_ID, DATASET } from "../scripts/sanity-config";
 import Layout from "../layouts/Layout.astro";
 import PuppyCard from "../components/puppy-card.astro";
+import BreedingDogCard from "../components/breeding-dog-card.astro";
 
 interface iPuppies {
   ms?: number;
   query?: string;
   result?: [iPuppy];
+}
+
+interface iBreedingDogs {
+  ms?: number;
+  query?: string;
+  result?: [iBreedingDog];
 }
 
 interface iPuppy {
@@ -30,21 +39,55 @@ interface iPuppy {
   };
 }
 
+interface iBreedingDog {
+  _createdAt?: string;
+  _id?: string;
+  _rev?: string;
+  _type?: string;
+  _updatedAt?: string;
+  age?: number;
+  color?: string;
+  gender?: string;
+  name?: string;
+  ownedBy?: string;
+  website?: string;
+  picture?: {
+    _type?: string;
+    asset?: {
+      _ref?: string;
+      _type?: string;
+    };
+  };
+}
+
 interface iPup {
   name?: string;
   birthday?: string;
   pic?: string;
   color?: string;
-  markings?: string;
   mom?: string;
   dad?: string;
 }
 
-const PUPPIES_QUERY = encodeURIComponent(`*[_type == "puppy"]`);
-const PUPPIES_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${PUPPIES_QUERY}`;
-let puppies: iPuppies;
-let puppyArray = [];
+interface iDog {
+  name?: string;
+  age?: number;
+  pic?: string;
+  color?: string;
+  gender?: string;
+  ownedBy?: string;
+  website?: string;
+}
 
+const PUPPIES_QUERY = encodeURIComponent(`*[_type == "puppy"]`);
+const BREEDING_DOGS_QUERY = encodeURIComponent(`*[_type == "breedingDogs"]`);
+const PUPPIES_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${PUPPIES_QUERY}`;
+const BREEDING_DOGS_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${BREEDING_DOGS_QUERY}`;
+
+let puppyArray = [];
+let breedingDogsArray = [];
+
+// available puppies
 try {
   let response = await fetch(PUPPIES_URL);
   let result = await response.json();
@@ -52,11 +95,10 @@ try {
   if (result !== null) {
     let puppies = result;
 
-    for (let puppy: iPuppy of puppies.result) {
+    for (let puppy of puppies.result) {
       let pup: iPup = {};
       pup.birthday = puppy.birthday;
       pup.color = puppy.color;
-      pup.markings = puppy.markings;
       pup.dad = puppy.dad;
       pup.mom = puppy.mom;
       pup.name = puppy.puppyName;
@@ -71,43 +113,102 @@ try {
 } catch (err: any) {
   console.error(err);
 }
+
+// breeding dogs
+try {
+  let response = await fetch(BREEDING_DOGS_URL);
+  let result = await response.json();
+
+  if (result !== null) {
+    let breedingDogsResult = result;
+
+    for (let breedingDog of breedingDogsResult.result) {
+      let tmpDog: iBreedingDog = breedingDog;
+      let dog: iDog = {};
+
+      dog.age = tmpDog.age;
+      dog.color = tmpDog.color;
+      dog.gender = tmpDog.gender;
+      dog.name = tmpDog.name;
+      dog.ownedBy = tmpDog.ownedBy;
+      dog.website = tmpDog.website;
+
+      let tmpSrc = tmpDog.picture?.asset?._ref;
+      if (tmpSrc) {
+        tmpSrc = tmpSrc?.replace("image-", "");
+        tmpSrc = tmpSrc?.replace("-jpg", ".jpg");
+        dog.pic = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
+      }      
+
+      breedingDogsArray.push(dog);
+    }
+  }
+  //console.log(breedingDogsArray);
+} catch (err: any) {
+  console.error(err);
+}
 ---
 
 <Layout
-  title="Availble puppies from Bailey French Bulldogs. A dog breeder who breeds family French Bulldogs for dog families."
+  title="Availble frenchie puppies from Bailey French Bulldogs."
   metaDesc="Take a sneek peak at our available Frenchies and fall in love with you new French Bulldog family member."
 >
   <main>
     <div class="bg-white">
       <div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1
-            class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50"
-          >
-            Available Puppies
-          </h1>
-          <ul>
-            {
-              puppyArray.map((pup: iPup) => (
-                /**
-                 *   TODO : Add a puppy component that takes in the iPup interface here
-                 *   TODO : make image of puppues circular like the about us page
-                 */ <PuppyCard
-                  name={pup.name}
-                  source={pup.pic}
-                  birthday={pup.birthday}
-                  color={pup.color}
-                  markings={pup.markings}
-                  mom={pup.mom}
-                  dad={pup.dad}
-                />
-              ))
-            }
-          </ul>
-        </div>
+        <section>
+          <div class="text-center">
+            <h1
+              class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50"
+            >
+              Available Puppies
+            </h1>
+            <ul>
+              {
+                puppyArray.map((pup: iPup) => (
+                  <PuppyCard
+                    name={pup.name}
+                    source={pup.pic}
+                    birthday={pup.birthday}
+                    color={pup.color}
+                    mom={pup.mom}
+                    dad={pup.dad}
+                  />
+                ))
+              }
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="text-center">
+            <h1
+              class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50"
+            >
+              Breeding Dogs
+            </h1>
+            <ul>
+              {
+                breedingDogsArray.map((dog: iDog) => (
+                  <BreedingDogCard
+                    name={dog.name}
+                    source={dog.pic}
+                    age={dog.age}
+                    color={dog.color}
+                    gender={dog.gender}
+                    ownedBy={dog.ownedBy}
+                    website={dog.website}
+                  />
+                ))
+              }
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
   </main>
+
+  <script></script>
 </Layout>
 
-<script></script>
+
