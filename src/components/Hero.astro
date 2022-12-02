@@ -1,14 +1,14 @@
+---
+import YellowButton from "./yellow-button.astro";
+import BlackButton from "./black-button.astro";
+---
+
 <div class="relative bg-gray-50">
   <div class="lg:relative">
     <div
       class="mx-auto w-full max-w-7xl pt-8 pb-10 text-center lg:py-48 lg:text-left"
     >
       <div class="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
-        <!-- <img
-          class="flex flex-col w-full h-20 mb-6"
-          src="/Bailey-logo.svg"
-          alt="Bailey French Bulldogs"
-        /> -->
         <h1
           class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl"
         >
@@ -21,21 +21,9 @@
           A Frenchie family for over 10 years.
         </p>
         <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
-          <div class="sm:flex sm:w-full sm:max-w-lg w-100">            
-            <div class="mt-4 sm:mt-0">
-              <a                
-                href="/contact-us"
-                class="block w-full rounded-md border border-transparent bg-bailey-50 px-5 py-3 text-base font-medium text-white shadow hover:bg-bailey-100 focus:outline-none focus:ring-2 focus:ring-bailey-50 focus:ring-offset-2 sm:px-10"
-                >Get Puppy Info.</a
-              >
-            </div>
-            <div class="mt-4 sm:mt-0 sm:ml-3">
-              <a                
-                href="/available-puppies"
-                class="block w-full rounded-md border border-transparent bg-gray-700 px-5 py-3 text-base font-medium text-white shadow hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-bailey-50 focus:ring-offset-2 sm:px-10"
-                >Available Puppies</a
-              >
-            </div>
+          <div class="sm:flex sm:w-full sm:max-w-lg w-100"> 
+            <YellowButton buttonText="Get Puppy Info." href="/contact-us"/>
+            <BlackButton buttonText="Available Puppies" href="/available-puppies"/>
           </div>
         </div>
       </div>

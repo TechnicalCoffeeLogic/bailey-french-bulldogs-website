@@ -16,16 +16,16 @@ const { title, metaDesc, ogType = "website" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />    
-    <meta
-      name="description"
-      content={metaDesc}
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={metaDesc} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={metaDesc} /> 
-    <meta property="og:image" content="/Bailey-logo.svg" /> 
-    <meta property="og:type" content={ogType} />  
+    <meta property="og:description" content={metaDesc} />
+    <meta property="og:image" content="/Bailey-logo.svg" />
+    <meta property="og:type" content={ogType} />
     <title>{title}</title>
   </head>
   <body class="bg-gray-100">
@@ -44,7 +44,6 @@ const { title, metaDesc, ogType = "website" } = Astro.props;
         width: 100%;
         /* background-color: #d1d1d1; */
       }
-
     </style>
     <script>
       import "../scripts/nav";

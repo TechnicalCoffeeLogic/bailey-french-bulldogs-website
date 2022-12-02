@@ -1,6 +1,9 @@
 ---
-const {name, source, birthday, color, mom, dad} = Astro.props;
+import YellowButton from "./yellow-button.astro";
+
+const { name, source, birthday, color, mom, dad } = Astro.props;
 ---
+
 <li class="bg-white pt-10 list-none">
   <div class="flex flex-col items-center w-100">
     <p class="text-2xl font-bold mb-5 tracking-tight">{name}</p>
@@ -11,9 +14,12 @@ const {name, source, birthday, color, mom, dad} = Astro.props;
     />
     <div class="w-100 flex flex-col text-gray-500">
       <p>Birthday: {birthday}</p>
-      <p>Color: {color}</p>      
+      <p>Color: {color}</p>
       <p>Mom: {mom}</p>
       <p>Dad: {dad}</p>
+    </div>
+    <div class="sm:mt-5">
+      <YellowButton buttonText="Get Puppy Info." href="/contact-us" />
     </div>
     <hr class="my-5 sm:w-96 w-full" />
   </div>

@@ -1,10 +1,9 @@
 ---
-import { toHTML } from "@portabletext/to-html";
-import { myPortableTextComponents } from "../scripts/PortableTextComponents";
 import { PROJECT_ID, DATASET } from "../scripts/sanity-config";
 import Layout from "../layouts/Layout.astro";
 import PuppyCard from "../components/puppy-card.astro";
 import BreedingDogCard from "../components/breeding-dog-card.astro";
+import YellowButton from "../components/yellow-button.astro";
 
 interface iPuppies {
   ms?: number;
@@ -176,11 +175,11 @@ try {
                   />
                 ))
               }
-            </ul>
+            </ul>            
           </div>
         </section>
 
-        <section>
+        <section class=" pt-10">
           <div class="text-center">
             <h1
               class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50"

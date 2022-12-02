@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import YellowButton from "../components/yellow-button.astro";
 ---
 
 <Layout
@@ -17,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
           </h1>
           <p class="mx-auto mt-5 max-w-xl text-lg text-gray-500">
             Hello! We are the Baileys, we raise AKC registered French Bulldogs.
-            Our mamas and babies are raised in our home as part of our family.
+            Our <span class="text-bailey-50">mamas and babies are raised in our home as part of our family.</span>
             They snuggle us on the couch, join us for family walks, play outside
             with our children, and eat like royalty. We want to be a blessing to
             the world, and we have been blessed by Frenchies. We have had
@@ -103,6 +104,12 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </li>
           </ul>
+          <div class=" mt-5 sm:w-100 sm:flex sm:justify-center">
+            <YellowButton
+              buttonText="View Available Puppies"
+              href="/available-puppies"
+            />
+          </div>
         </div>
       </div>
     </div>
