@@ -4,9 +4,9 @@ var Email = { send: function (a) { return new Promise(function (n, e) { a.nocach
 export function SendEmail(subject, message) {
 
     Email.send({
-        SecureToken: "1d811cb9-44a0-4821-aa3a-6cfceda42161",
-        To: "technicalcoffeelogic@gmail.com",
-        From: "technicalcoffeelogic@gmail.com",
+        SecureToken: "53551e0e-5e27-4fb8-a03a-ec017695a86d",
+        To: "baileyfrenchbulldogs@gmail.com",
+        From: "baileyfrenchbulldogs@gmail.com",
         Subject:subject,
         Body: message,
     }).then((message) => {
