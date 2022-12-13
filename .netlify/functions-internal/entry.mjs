@@ -2065,8 +2065,7 @@ const $$BreedingDogCard = createComponent(async ($$result, $$props, $$slots) => 
   <div class="flex flex-col items-center w-100">
     <p class="text-2xl font-bold mb-5 tracking-tight">${name}</p>
     <img class="h-48 w-48 rounded-full xl:h-56 xl:w-56 mb-5"${addAttribute(source, "src")}${addAttribute(name, "alt")}>
-    <div class="w-100 flex flex-col text-gray-500">
-      <p>Age: ${age}</p>
+    <div class="w-100 flex flex-col text-gray-500">      
       <p>Color: ${color}</p>      
       <p>Gender: ${gender}</p>
       <p>Owner: ${ownedBy}</p>
