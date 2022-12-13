@@ -1629,9 +1629,9 @@ var server_default = {
   renderToStaticMarkup
 };
 
-const $$Astro$h = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/Footer.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
+const $$Astro$j = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/Footer.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
 const $$Footer = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$h, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$j, $$props, $$slots);
   Astro2.self = $$Footer;
   return renderTemplate`${maybeRenderHead($$result)}<footer class="bg-white">
   <div class="mx-auto max-w-7xl overflow-hidden py-8 px-4 sm:px-6 lg:px-8">
@@ -1689,36 +1689,36 @@ const $$Footer = createComponent(async ($$result, $$props, $$slots) => {
 </footer>`;
 });
 
-const $$Astro$g = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/Nav.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
+const $$Astro$i = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/Nav.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
 const $$Nav = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$g, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$i, $$props, $$slots);
   Astro2.self = $$Nav;
-  return renderTemplate`${maybeRenderHead($$result)}<div class="fixed w-full z-10 top-0 bg-gray-50 astro-IU35BZEB">
-  <div class="relative bg-white shadow astro-IU35BZEB">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 astro-IU35BZEB">
-      <div class="flex items-center justify-between py-4 md:justify-start md:space-x-10 astro-IU35BZEB">
-        <div class="flex justify-start lg:w-0 lg:flex-1 astro-IU35BZEB">
-          <a href="/" class="astro-IU35BZEB">
-            <span class="sr-only astro-IU35BZEB">Bailey French Bulldogs</span>
-            <img class="h-10 w-auto sm:h-10 astro-IU35BZEB" src="/Bailey-logo.svg" alt="">
+  return renderTemplate`${maybeRenderHead($$result)}<div class="fixed w-full z-10 top-0 bg-gray-50 astro-RWVV35MS">
+  <div class="relative bg-white shadow astro-RWVV35MS">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 astro-RWVV35MS">
+      <div class="flex items-center justify-between py-4 md:justify-start md:space-x-10 astro-RWVV35MS">
+        <div class="flex justify-start lg:w-0 lg:flex-1 astro-RWVV35MS">
+          <a href="/" class="astro-RWVV35MS">
+            <span class="sr-only astro-RWVV35MS">Bailey French Bulldogs</span>
+            <img class="h-10 w-auto sm:h-16 astro-RWVV35MS" src="/Bailey-logo.svg" alt="">
           </a>
         </div>
-        <div class="-my-2 -mr-2 md:hidden astro-IU35BZEB">
-          <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 hamburger astro-IU35BZEB" aria-expanded="false">
-            <span class="sr-only astro-IU35BZEB">Open menu</span>
+        <div class="-my-2 -mr-2 md:hidden astro-RWVV35MS">
+          <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 hamburger astro-RWVV35MS" aria-expanded="false">
+            <span class="sr-only astro-RWVV35MS">Open menu</span>
             <!-- Heroicon name: outline/bars-3 -->
-            <svg class="h-6 w-6 astro-IU35BZEB" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" class="astro-IU35BZEB"></path>
+            <svg class="h-6 w-6 astro-RWVV35MS" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" class="astro-RWVV35MS"></path>
             </svg>
           </button>
         </div>
-        <nav class="hidden space-x-10 md:flex astro-IU35BZEB">
-          <a href="/available-puppies" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-IU35BZEB">Available Puppies</a>          
-          <a href="/faq" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-IU35BZEB">FAQ</a>
-          <a href="/about-us" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-IU35BZEB">About Us</a>
-          <a href="/blog" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-IU35BZEB">Blog</a>
-          <a href="/contact-us" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-IU35BZEB">Contact</a>
-          <a href="https://forms.gle/f2WhAvXhw3NMLJ1x6" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-IU35BZEB">Questionaire</a>
+        <nav class="hidden space-x-10 md:flex astro-RWVV35MS">
+          <a href="/available-puppies" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-RWVV35MS">Available Puppies</a>          
+          <a href="/faq" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-RWVV35MS">FAQ</a>
+          <a href="/about-us" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-RWVV35MS">About Us</a>
+          <a href="/blog" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-RWVV35MS">Blog</a>
+          <a href="/contact-us" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-RWVV35MS">Contact</a>
+          <a href="https://forms.gle/f2WhAvXhw3NMLJ1x6" class="text-base font-medium text-gray-500 hover:text-gray-900 astro-RWVV35MS">Questionaire</a>
         </nav>
       </div>
     </div>
@@ -1733,47 +1733,47 @@ const $$Nav = createComponent(async ($$result, $$props, $$slots) => {
           From: "opacity-100 scale-100"
           To: "opacity-0 scale-95"
       -->
-    <div class="fixed inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden nav-links hidden animate-open-menu astro-IU35BZEB">
-      <div class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 astro-IU35BZEB">
-        <div class="px-5 pt-5 pb-6 astro-IU35BZEB">
-          <div class="flex items-center justify-between astro-IU35BZEB">
-            <a href="/" class="astro-IU35BZEB">
-              <img class="h-10 w-auto astro-IU35BZEB" src="/Bailey-logo.svg" alt="Bailey French BullDogs">
+    <div class="fixed inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden nav-links hidden animate-open-menu astro-RWVV35MS">
+      <div class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 astro-RWVV35MS">
+        <div class="px-5 pt-5 pb-6 astro-RWVV35MS">
+          <div class="flex items-center justify-between astro-RWVV35MS">
+            <a href="/" class="astro-RWVV35MS">
+              <img class="h-10 w-auto astro-RWVV35MS" src="/Bailey-logo.svg" alt="Bailey French BullDogs">
             </a>
-            <div class="-mr-2 astro-IU35BZEB">
-              <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 close astro-IU35BZEB">
-                <span class="sr-only astro-IU35BZEB">Close menu</span>
+            <div class="-mr-2 astro-RWVV35MS">
+              <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 close astro-RWVV35MS">
+                <span class="sr-only astro-RWVV35MS">Close menu</span>
                 <!-- Heroicon name: outline/x-mark -->
-                <svg class="h-6 w-6 astro-IU35BZEB" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" class="astro-IU35BZEB"></path>
+                <svg class="h-6 w-6 astro-RWVV35MS" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" class="astro-RWVV35MS"></path>
                 </svg>
               </button>
             </div>
           </div>
-          <div class="mt-6 astro-IU35BZEB">
-            <nav class="grid gap-y-8 astro-IU35BZEB">
-              <a href="/available-puppies" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-IU35BZEB">
-                <span class="ml-3 text-base font-medium text-gray-900 astro-IU35BZEB">Available Puppies</span>
+          <div class="mt-6 astro-RWVV35MS">
+            <nav class="grid gap-y-8 astro-RWVV35MS">
+              <a href="/available-puppies" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-RWVV35MS">
+                <span class="ml-3 text-base font-medium text-gray-900 astro-RWVV35MS">Available Puppies</span>
               </a>
 
-              <a href="/faq" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-IU35BZEB">
-                <span class="ml-3 text-base font-medium text-gray-900 astro-IU35BZEB">FAQ</span>
+              <a href="/faq" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-RWVV35MS">
+                <span class="ml-3 text-base font-medium text-gray-900 astro-RWVV35MS">FAQ</span>
               </a>
 
-              <a href="/about-us" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-IU35BZEB">
-                <span class="ml-3 text-base font-medium text-gray-900 astro-IU35BZEB">About Us</span>
+              <a href="/about-us" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-RWVV35MS">
+                <span class="ml-3 text-base font-medium text-gray-900 astro-RWVV35MS">About Us</span>
               </a>
 
-              <a href="/blog" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-IU35BZEB">
-                <span class="ml-3 text-base font-medium text-gray-900 astro-IU35BZEB">Blog</span>
+              <a href="/blog" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-RWVV35MS">
+                <span class="ml-3 text-base font-medium text-gray-900 astro-RWVV35MS">Blog</span>
               </a>
 
-              <a href="/contact-us" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-IU35BZEB">
-                <span class="ml-3 text-base font-medium text-gray-900 astro-IU35BZEB">Contact</span>
+              <a href="/contact-us" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-RWVV35MS">
+                <span class="ml-3 text-base font-medium text-gray-900 astro-RWVV35MS">Contact</span>
               </a>
 
-              <a href="https://forms.gle/f2WhAvXhw3NMLJ1x6" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-IU35BZEB">
-                <span class="ml-3 text-base font-medium text-gray-900 astro-IU35BZEB">Questionaire</span>
+              <a href="https://forms.gle/f2WhAvXhw3NMLJ1x6" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 astro-RWVV35MS">
+                <span class="ml-3 text-base font-medium text-gray-900 astro-RWVV35MS">Questionaire</span>
               </a>
             </nav>
           </div>
@@ -1786,22 +1786,25 @@ const $$Nav = createComponent(async ($$result, $$props, $$slots) => {
 `;
 });
 
-const $$Astro$f = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/layouts/Layout.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
+const $$Astro$h = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/layouts/Layout.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
 const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$f, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$h, $$props, $$slots);
   Astro2.self = $$Layout;
   const { title, metaDesc, ogType = "website" } = Astro2.props;
   return renderTemplate`<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <meta name="generator"${addAttribute(Astro2.generator, "content")}>    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="generator"${addAttribute(Astro2.generator, "content")}>
     <meta name="description"${addAttribute(metaDesc, "content")}>
     <meta property="og:title"${addAttribute(title, "content")}>
-    <meta property="og:description"${addAttribute(metaDesc, "content")}> 
-    <meta property="og:image" content="/Bailey-logo.svg"> 
-    <meta property="og:type"${addAttribute(ogType, "content")}>  
+    <meta property="og:description"${addAttribute(metaDesc, "content")}>
+    <meta property="og:image" content="/Bailey-logo.svg">
+    <meta property="og:type"${addAttribute(ogType, "content")}>
     <title>${title}</title>
   ${renderHead($$result)}</head>
   <body class="bg-gray-100">
@@ -1814,6 +1817,26 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 </html>`;
 });
 
+const $$Astro$g = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/yellow-button.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
+const $$YellowButton = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$g, $$props, $$slots);
+  Astro2.self = $$YellowButton;
+  const { buttonText, href } = Astro2.props;
+  return renderTemplate`${maybeRenderHead($$result)}<div class="mt-4 sm:mt-0 text-center">
+    <a${addAttribute(href, "href")} class="block w-full rounded-md border border-transparent bg-bailey-50 px-5 py-3 text-base font-medium text-white shadow hover:bg-bailey-100 focus:outline-none focus:ring-2 focus:ring-bailey-50 focus:ring-offset-2 sm:px-10">${buttonText}</a>
+  </div>`;
+});
+
+const $$Astro$f = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/black-button.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
+const $$BlackButton = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$f, $$props, $$slots);
+  Astro2.self = $$BlackButton;
+  const { buttonText, href } = Astro2.props;
+  return renderTemplate`${maybeRenderHead($$result)}<div class="mt-4 sm:mt-0 sm:ml-3">
+  <a${addAttribute(href, "href")} class="block w-full rounded-md border border-transparent bg-gray-700 px-5 py-3 text-base font-medium text-white shadow hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-bailey-50 focus:ring-offset-2 sm:px-10">${buttonText}</a>
+</div>`;
+});
+
 const $$Astro$e = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/Hero.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
 const $$Hero = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$e, $$props, $$slots);
@@ -1822,11 +1845,6 @@ const $$Hero = createComponent(async ($$result, $$props, $$slots) => {
   <div class="lg:relative">
     <div class="mx-auto w-full max-w-7xl pt-8 pb-10 text-center lg:py-48 lg:text-left">
       <div class="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
-        <!-- <img
-          class="flex flex-col w-full h-20 mb-6"
-          src="/Bailey-logo.svg"
-          alt="Bailey French Bulldogs"
-        /> -->
         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
           <span class="block xl:inline">Family Dogs For</span>
           <span class="block text-bailey-50 xl:inline">Dog Families</span>
@@ -1835,13 +1853,9 @@ const $$Hero = createComponent(async ($$result, $$props, $$slots) => {
           A Frenchie family for over 10 years.
         </p>
         <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
-          <div class="sm:flex sm:w-full sm:max-w-lg w-100">            
-            <div class="mt-4 sm:mt-0">
-              <a href="/contact-us" class="block w-full rounded-md border border-transparent bg-bailey-50 px-5 py-3 text-base font-medium text-white shadow hover:bg-bailey-100 focus:outline-none focus:ring-2 focus:ring-bailey-50 focus:ring-offset-2 sm:px-10">Get Puppy Info.</a>
-            </div>
-            <div class="mt-4 sm:mt-0 sm:ml-3">
-              <a href="/available-puppies" class="block w-full rounded-md border border-transparent bg-gray-700 px-5 py-3 text-base font-medium text-white shadow hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-bailey-50 focus:ring-offset-2 sm:px-10">Available Puppies</a>
-            </div>
+          <div class="sm:flex sm:w-full sm:max-w-lg w-100"> 
+            ${renderComponent($$result, "YellowButton", $$YellowButton, { "buttonText": "Get Puppy Info.", "href": "/contact-us" })}
+            ${renderComponent($$result, "BlackButton", $$BlackButton, { "buttonText": "Available Puppies", "href": "/available-puppies" })}
           </div>
         </div>
       </div>
@@ -1858,13 +1872,17 @@ const $$Blurb = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$d, $$props, $$slots);
   Astro2.self = $$Blurb;
   return renderTemplate`${maybeRenderHead($$result)}<div class="bg-white">
-    <div class="mx-auto max-w-7xl py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <p class="mt-1 text-4xl font-bold tracking-tight text-bailey-50 sm:text-5xl lg:text-6xl">Bailey French Bulldogs</p>
-        <p class="mx-auto mt-5 max-w-xl text-xl text-gray-500">Breeding and raising AKC registered Frenchies in-home as part of our family.</p>
-      </div>
+  <div class="mx-auto max-w-7xl py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p class="mt-1 text-4xl font-bold tracking-tight text-bailey-50 sm:text-5xl lg:text-6xl">
+        Bailey French Bulldogs
+      </p>
+      <p class="mx-auto mt-5 max-w-xl text-xl text-gray-500">
+        Breeding and raising AKC registered Frenchies <span class="text-bailey-50">in-home</span> as part of our family.
+      </p>
     </div>
-  </div>`;
+  </div>
+</div>`;
 });
 
 const $$Astro$c = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-website/src/components/Testamonials.astro", "", "file:///C:/Users/trevo/source/bailey-french-bulldogs-website/");
@@ -1983,18 +2001,18 @@ const $$Astro$a = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-webs
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$a, $$props, $$slots);
   Astro2.self = $$Index;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Bailey French Bulldogs - breeding family French Bulldogs for dog families.", "metaDesc": "A Frenchie family for over 10 years that breeds family French Bulldogs for dog families.", "class": "astro-NLD3JTAL" }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="main-grid astro-NLD3JTAL">
-    <div class="hero astro-NLD3JTAL">
-      ${renderComponent($$result, "Hero", $$Hero, { "class": "astro-NLD3JTAL" })}
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Bailey French Bulldogs - breeding family French Bulldogs for dog families.", "metaDesc": "A Frenchie family for over 10 years that breeds family French Bulldogs for dog families.", "class": "astro-BORJ6HEY" }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="main-grid astro-BORJ6HEY">
+    <div class="hero astro-BORJ6HEY">
+      ${renderComponent($$result, "Hero", $$Hero, { "class": "astro-BORJ6HEY" })}
     </div>
-    <div class="blurb astro-NLD3JTAL">
-      ${renderComponent($$result, "Blurb", $$Blurb, { "class": "astro-NLD3JTAL" })}
+    <div class="blurb astro-BORJ6HEY">
+      ${renderComponent($$result, "Blurb", $$Blurb, { "class": "astro-BORJ6HEY" })}
     </div>
-    <div class="testamonials astro-NLD3JTAL">
-      ${renderComponent($$result, "Testamonials", $$Testamonials, { "class": "astro-NLD3JTAL" })}
+    <div class="testamonials astro-BORJ6HEY">
+      ${renderComponent($$result, "Testamonials", $$Testamonials, { "class": "astro-BORJ6HEY" })}
     </div>
-    <div class="contact astro-NLD3JTAL">
-      ${renderComponent($$result, "Contact", $$Contact, { "class": "astro-NLD3JTAL" })}
+    <div class="contact astro-BORJ6HEY">
+      ${renderComponent($$result, "Contact", $$Contact, { "class": "astro-BORJ6HEY" })}
     </div>
   </main>` })}
 ${maybeRenderHead($$result)}
@@ -2026,9 +2044,12 @@ const $$PuppyCard = createComponent(async ($$result, $$props, $$slots) => {
     <img class="h-48 w-48 rounded-full xl:h-56 xl:w-56 mb-5"${addAttribute(source, "src")}${addAttribute(name, "alt")}>
     <div class="w-100 flex flex-col text-gray-500">
       <p>Birthday: ${birthday}</p>
-      <p>Color: ${color}</p>      
+      <p>Color: ${color}</p>
       <p>Mom: ${mom}</p>
       <p>Dad: ${dad}</p>
+    </div>
+    <div class="sm:mt-5">
+      ${renderComponent($$result, "YellowButton", $$YellowButton, { "buttonText": "Get Puppy Info.", "href": "/contact-us" })}
     </div>
     <hr class="my-5 sm:w-96 w-full">
   </div>
@@ -2124,11 +2145,11 @@ const $$AvailablePuppies = createComponent(async ($$result, $$props, $$slots) =>
             </h1>
             <ul>
               ${puppyArray.map((pup) => renderTemplate`${renderComponent($$result, "PuppyCard", $$PuppyCard, { "name": pup.name, "source": pup.pic, "birthday": pup.birthday, "color": pup.color, "mom": pup.mom, "dad": pup.dad })}`)}
-            </ul>
+            </ul>            
           </div>
         </section>
 
-        <section>
+        <section class=" pt-10">
           <div class="text-center">
             <h1 class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50">
               Breeding Dogs
@@ -2301,16 +2322,16 @@ const $$Astro$4 = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-webs
 const $$AboutUs = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$AboutUs;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Learn about Bailey French Bulldogs. A dog breeder who breeds family French Bulldogs for dog families.", "metaDesc": "We are the Baileys, we raise AKC registered French Bulldogs. Our mamas and babies are raised in our home as part of our family.", "class": "astro-O2FY6C5F" }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="astro-O2FY6C5F">
-    <div class="bg-white astro-O2FY6C5F">
-      <div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8 astro-O2FY6C5F">
-        <div class="text-center astro-O2FY6C5F">
-          <h1 class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50 astro-O2FY6C5F">
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Learn about Bailey French Bulldogs. A dog breeder who breeds family French Bulldogs for dog families.", "metaDesc": "We are the Baileys, we raise AKC registered French Bulldogs. Our mamas and babies are raised in our home as part of our family.", "class": "astro-GQVJADB5" }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="astro-GQVJADB5">
+    <div class="bg-white astro-GQVJADB5">
+      <div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8 astro-GQVJADB5">
+        <div class="text-center astro-GQVJADB5">
+          <h1 class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50 astro-GQVJADB5">
             The Bailey Family
           </h1>
-          <p class="mx-auto mt-5 max-w-xl text-lg text-gray-500 astro-O2FY6C5F">
+          <p class="mx-auto mt-5 max-w-xl text-lg text-gray-500 astro-GQVJADB5">
             Hello! We are the Baileys, we raise AKC registered French Bulldogs.
-            Our mamas and babies are raised in our home as part of our family.
+            Our <span class="text-bailey-50 astro-GQVJADB5">mamas and babies are raised in our home as part of our family.</span>
             They snuggle us on the couch, join us for family walks, play outside
             with our children, and eat like royalty. We want to be a blessing to
             the world, and we have been blessed by Frenchies. We have had
@@ -2322,18 +2343,18 @@ const $$AboutUs = createComponent(async ($$result, $$props, $$slots) => {
     </div>
 
     <!--family -->
-    <div class="bg-white astro-O2FY6C5F">
-      <div class="mx-auto max-w-7xl py-4 px-4 text-center sm:px-6 lg:px-8 lg:py-12 astro-O2FY6C5F">
-        <div class="space-y-12 astro-O2FY6C5F">
-          <ul role="list" class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:max-w-5xl lg:grid-cols-3 astro-O2FY6C5F">
+    <div class="bg-white astro-GQVJADB5">
+      <div class="mx-auto max-w-7xl py-4 px-4 text-center sm:px-6 lg:px-8 lg:py-12 astro-GQVJADB5">
+        <div class="space-y-12 astro-GQVJADB5">
+          <ul role="list" class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:max-w-5xl lg:grid-cols-3 astro-GQVJADB5">
             
-            <li class="astro-O2FY6C5F">
-              <div class="space-y-6 astro-O2FY6C5F">
-                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-O2FY6C5F" src="./zach-and-brittany-web.jpg" alt="">
-                <div class="space-y-2 astro-O2FY6C5F">
-                  <div class="space-y-1 text-lg font-medium leading-6 astro-O2FY6C5F">
-                    <h3 class="font-bold astro-O2FY6C5F">
-                      Zach and Brittany <br class="astro-O2FY6C5F"> Bailey
+            <li class="astro-GQVJADB5">
+              <div class="space-y-6 astro-GQVJADB5">
+                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-GQVJADB5" src="./zach-and-brittany-web.jpg" alt="">
+                <div class="space-y-2 astro-GQVJADB5">
+                  <div class="space-y-1 text-lg font-medium leading-6 astro-GQVJADB5">
+                    <h3 class="font-bold astro-GQVJADB5">
+                      Zach and Brittany <br class="astro-GQVJADB5"> Bailey
                     </h3>
                   </div>
                 </div>
@@ -2341,40 +2362,43 @@ const $$AboutUs = createComponent(async ($$result, $$props, $$slots) => {
             </li>
 
             <!-- More people... -->
-            <li class="astro-O2FY6C5F">
-              <div class="space-y-6 astro-O2FY6C5F">
-                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-O2FY6C5F" src="./sons-web.jpg" alt="">
-                <div class="space-y-2 astro-O2FY6C5F">
-                  <div class="space-y-1 text-lg font-medium leading-6 astro-O2FY6C5F">
+            <li class="astro-GQVJADB5">
+              <div class="space-y-6 astro-GQVJADB5">
+                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-GQVJADB5" src="./sons-web.jpg" alt="">
+                <div class="space-y-2 astro-GQVJADB5">
+                  <div class="space-y-1 text-lg font-medium leading-6 astro-GQVJADB5">
                   </div>
                 </div>
               </div>
             </li>
 
             <!-- -->
-            <li class="astro-O2FY6C5F">
-              <div class="space-y-6 astro-O2FY6C5F">
-                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-O2FY6C5F" src="./daughter-web.jpg" alt="">
-                <div class="space-y-2 astro-O2FY6C5F">
-                  <div class="space-y-1 text-lg font-medium leading-6 astro-O2FY6C5F">
+            <li class="astro-GQVJADB5">
+              <div class="space-y-6 astro-GQVJADB5">
+                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-GQVJADB5" src="./daughter-web.jpg" alt="">
+                <div class="space-y-2 astro-GQVJADB5">
+                  <div class="space-y-1 text-lg font-medium leading-6 astro-GQVJADB5">
                   </div>
                 </div>
               </div>
             </li>
 
             <!-- -->
-            <li class="astro-O2FY6C5F">
-              <div class="space-y-6 astro-O2FY6C5F">
-                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-O2FY6C5F" src="./ahsoka-web.jpg" alt="">
-                <div class="space-y-2 astro-O2FY6C5F">
-                  <div class="space-y-1 text-lg font-medium leading-6 astro-O2FY6C5F">
-                    <h3 class="font-bold astro-O2FY6C5F">Ahsoka</h3>
-                    <p class="text-bailey-50 font-light astro-O2FY6C5F">Dam</p>
+            <li class="astro-GQVJADB5">
+              <div class="space-y-6 astro-GQVJADB5">
+                <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 astro-GQVJADB5" src="./ahsoka-web.jpg" alt="">
+                <div class="space-y-2 astro-GQVJADB5">
+                  <div class="space-y-1 text-lg font-medium leading-6 astro-GQVJADB5">
+                    <h3 class="font-bold astro-GQVJADB5">Ahsoka</h3>
+                    <p class="text-bailey-50 font-light astro-GQVJADB5">Dam</p>
                   </div>
                 </div>
               </div>
             </li>
           </ul>
+          <div class=" mt-5 sm:w-100 sm:flex sm:justify-center astro-GQVJADB5">
+            ${renderComponent($$result, "YellowButton", $$YellowButton, { "buttonText": "View Available Puppies", "href": "/available-puppies", "class": "astro-GQVJADB5" })}
+          </div>
         </div>
       </div>
     </div>
@@ -2648,6 +2672,9 @@ const $$Faq = createComponent(async ($$result, $$props, $$slots) => {
           </dl>
         </div>
       </div>
+      <div class="mt-5 sm:w-100 sm:flex sm:justify-center p-5">
+        ${renderComponent($$result, "YellowButton", $$YellowButton, { "buttonText": "View Available Puppies", "href": "/available-puppies" })}
+      </div>
     </div>
   </main>` })}`;
 });
@@ -2739,7 +2766,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/about-us.76e6097b.css","assets/index.0ae18eec.css"],"scripts":[{"type":"external","value":"hoisted.441142fa.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.76e6097b.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c82.js"}],"routeData":{"route":"/available-puppies","type":"page","pattern":"^\\/available-puppies\\/?$","segments":[[{"content":"available-puppies","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/available-puppies.astro","pathname":"/available-puppies","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.76e6097b.css"],"scripts":[{"type":"external","value":"hoisted.a8199c7d.js"}],"routeData":{"route":"/contact-us","type":"page","pattern":"^\\/contact-us\\/?$","segments":[[{"content":"contact-us","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/contact-us.astro","pathname":"/contact-us","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.76e6097b.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c822.js"}],"routeData":{"route":"/blog-post/[...slug]","type":"page","pattern":"^\\/blog-post(?:\\/(.*?))?\\/?$","segments":[[{"content":"blog-post","dynamic":false,"spread":false}],[{"content":"...slug","dynamic":true,"spread":true}]],"params":["...slug"],"component":"src/pages/blog-post/[...slug].astro","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.76e6097b.css","assets/about-us.a1072e6b.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c824.js"}],"routeData":{"route":"/about-us","type":"page","pattern":"^\\/about-us\\/?$","segments":[[{"content":"about-us","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about-us.astro","pathname":"/about-us","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.76e6097b.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c823.js"}],"routeData":{"route":"/blog","type":"page","pattern":"^\\/blog\\/?$","segments":[[{"content":"blog","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/blog.astro","pathname":"/blog","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.76e6097b.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c824.js"}],"routeData":{"route":"/test","type":"page","pattern":"^\\/test\\/?$","segments":[[{"content":"test","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/test.astro","pathname":"/test","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.76e6097b.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c824.js"}],"routeData":{"route":"/faq","type":"page","pattern":"^\\/faq\\/?$","segments":[[{"content":"faq","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faq.astro","pathname":"/faq","_meta":{"trailingSlash":"ignore"}}}],"base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","/astro/hoisted.js?q=0":"hoisted.441142fa.js","/astro/hoisted.js?q=1":"hoisted.fd0e4c82.js","/astro/hoisted.js?q=2":"hoisted.a8199c7d.js","/astro/hoisted.js?q=3":"hoisted.fd0e4c822.js","/astro/hoisted.js?q=4":"hoisted.fd0e4c823.js","/astro/hoisted.js?q=5":"hoisted.fd0e4c824.js","astro:scripts/before-hydration.js":""},"assets":["/assets/about-us.a1072e6b.css","/assets/index.0ae18eec.css","/assets/about-us.76e6097b.css","/ahsoka-web.JPG","/Bailey-logo.svg","/chelsea.jpg","/daughter-web.jpg","/favicon.svg","/heidi.jpg","/hero-image.jpg","/hoisted.441142fa.js","/hoisted.a8199c7d.js","/hoisted.fd0e4c82.js","/hoisted.fd0e4c822.js","/hoisted.fd0e4c823.js","/hoisted.fd0e4c824.js","/sons-web.jpg","/taylor.jpg","/zach-and-brittany-web.jpg","/chunks/nav.8c615f46.js","/chunks/smtp.a4736558.js"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/about-us.ce669d7d.css","assets/index.c1caddc8.css"],"scripts":[{"type":"external","value":"hoisted.b31c3896.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.ce669d7d.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c82.js"}],"routeData":{"route":"/available-puppies","type":"page","pattern":"^\\/available-puppies\\/?$","segments":[[{"content":"available-puppies","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/available-puppies.astro","pathname":"/available-puppies","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.ce669d7d.css"],"scripts":[{"type":"external","value":"hoisted.b31c38962.js"}],"routeData":{"route":"/contact-us","type":"page","pattern":"^\\/contact-us\\/?$","segments":[[{"content":"contact-us","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/contact-us.astro","pathname":"/contact-us","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.ce669d7d.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c822.js"}],"routeData":{"route":"/blog-post/[...slug]","type":"page","pattern":"^\\/blog-post(?:\\/(.*?))?\\/?$","segments":[[{"content":"blog-post","dynamic":false,"spread":false}],[{"content":"...slug","dynamic":true,"spread":true}]],"params":["...slug"],"component":"src/pages/blog-post/[...slug].astro","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.ce669d7d.css","assets/about-us.435504a9.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c824.js"}],"routeData":{"route":"/about-us","type":"page","pattern":"^\\/about-us\\/?$","segments":[[{"content":"about-us","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about-us.astro","pathname":"/about-us","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.ce669d7d.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c823.js"}],"routeData":{"route":"/blog","type":"page","pattern":"^\\/blog\\/?$","segments":[[{"content":"blog","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/blog.astro","pathname":"/blog","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.ce669d7d.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c824.js"}],"routeData":{"route":"/test","type":"page","pattern":"^\\/test\\/?$","segments":[[{"content":"test","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/test.astro","pathname":"/test","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/about-us.ce669d7d.css"],"scripts":[{"type":"external","value":"hoisted.fd0e4c824.js"}],"routeData":{"route":"/faq","type":"page","pattern":"^\\/faq\\/?$","segments":[[{"content":"faq","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faq.astro","pathname":"/faq","_meta":{"trailingSlash":"ignore"}}}],"base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","/astro/hoisted.js?q=0":"hoisted.b31c3896.js","/astro/hoisted.js?q=1":"hoisted.fd0e4c82.js","/astro/hoisted.js?q=2":"hoisted.b31c38962.js","/astro/hoisted.js?q=3":"hoisted.fd0e4c822.js","/astro/hoisted.js?q=4":"hoisted.fd0e4c823.js","/astro/hoisted.js?q=5":"hoisted.fd0e4c824.js","astro:scripts/before-hydration.js":""},"assets":["/assets/about-us.435504a9.css","/assets/index.c1caddc8.css","/assets/about-us.ce669d7d.css","/about.txt","/ahsoka-web.JPG","/android-chrome-192x192.png","/android-chrome-512x512.png","/apple-touch-icon.png","/Bailey-logo.svg","/chelsea.jpg","/daughter-web.jpg","/favicon-16x16.png","/favicon-32x32.png","/favicon.ico","/heidi.jpg","/hero-image.jpg","/hoisted.b31c3896.js","/hoisted.b31c38962.js","/hoisted.fd0e4c82.js","/hoisted.fd0e4c822.js","/hoisted.fd0e4c823.js","/hoisted.fd0e4c824.js","/site.webmanifest","/sons-web.jpg","/taylor.jpg","/zach-and-brittany-web.jpg","/chunks/contact-us.939e6397.js","/chunks/nav.8c615f46.js"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
