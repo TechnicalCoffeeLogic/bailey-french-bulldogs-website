@@ -5,7 +5,7 @@ export function SendEmail(subject, message) {
 
     Email.send({
         SecureToken: "d51194aa-bffb-4355-b77e-625a101bbb8b",
-        To: "technicalcoffeelogic@gmail.com",
+        To: "baileyfrenchbulldogs@gmail.com",
         From: "baileyfrenchbulldogs@gmail.com",
         Subject:subject,
         Body: message,
