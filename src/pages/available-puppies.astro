@@ -136,6 +136,7 @@ try {
       if (tmpSrc) {
         tmpSrc = tmpSrc?.replace("image-", "");
         tmpSrc = tmpSrc?.replace("-jpg", ".jpg");
+        tmpSrc = tmpSrc?.replace("-png", ".png");
         dog.pic = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
       }      
 
