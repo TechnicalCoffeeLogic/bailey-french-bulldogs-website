@@ -105,6 +105,7 @@ try {
       let tmpSrc = puppy.puppyPicture?.asset?._ref;
       tmpSrc = tmpSrc.replace("image-", "");
       tmpSrc = tmpSrc.replace("-jpg", ".jpg");
+      tmpSrc = tmpSrc?.replace("-png", ".png");
       pup.pic = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
       puppyArray.push(pup);
     }
@@ -135,10 +136,14 @@ try {
       let tmpSrc = tmpDog.picture?.asset?._ref;
       if (tmpSrc) {
         tmpSrc = tmpSrc?.replace("image-", "");
-        tmpSrc = tmpSrc?.replace("-jpg", ".jpg");
-        tmpSrc = tmpSrc?.replace("-png", ".png");
+        if (tmpSrc.includes("-jpg")) {
+          tmpSrc = tmpSrc?.replace("-jpg", ".jpg");
+        } else {
+          tmpSrc = tmpSrc?.replace("-png", ".png");
+        }
+        console.log(tmpSrc);
         dog.pic = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
-      }      
+      }
 
       breedingDogsArray.push(dog);
     }
@@ -176,11 +181,11 @@ try {
                   />
                 ))
               }
-            </ul>            
+            </ul>
           </div>
         </section>
 
-        <section class=" pt-10">
+        <section class="pt-10">
           <div class="text-center">
             <h1
               class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl text-bailey-50"
@@ -210,5 +215,3 @@ try {
 
   <script></script>
 </Layout>
-
-
