@@ -2037,12 +2037,13 @@ const $$Astro$9 = createAstro("C:/Users/trevo/source/bailey-french-bulldogs-webs
 const $$PuppyCard = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$9, $$props, $$slots);
   Astro2.self = $$PuppyCard;
-  const { name, source, birthday, color, mom, dad } = Astro2.props;
+  const { name, source, birthday, color, mom, dad, gender } = Astro2.props;
   return renderTemplate`${maybeRenderHead($$result)}<li class="bg-white pt-10 list-none">
   <div class="flex flex-col items-center w-100">
     <p class="text-2xl font-bold mb-5 tracking-tight">${name}</p>
-    <img class="h-48 w-48 rounded-full xl:h-56 xl:w-56 mb-5"${addAttribute(source, "src")}${addAttribute(name, "alt")}>
+    <img class="h-48 w-48 rounded-lg xl:h-56 xl:w-56 mb-5"${addAttribute(source, "src")}${addAttribute(name, "alt")}>
     <div class="w-100 flex flex-col text-gray-500">
+      <p>Gender: ${gender}</p>
       <p>Birthday: ${birthday}</p>
       <p>Color: ${color}</p>
       <p>Mom: ${mom}</p>
@@ -2064,7 +2065,7 @@ const $$BreedingDogCard = createComponent(async ($$result, $$props, $$slots) => 
   return renderTemplate`${maybeRenderHead($$result)}<li class="bg-white pt-10 list-none">
   <div class="flex flex-col items-center w-100">
     <p class="text-2xl font-bold mb-5 tracking-tight">${name}</p>
-    <img class="h-48 w-48 rounded-full xl:h-56 xl:w-56 mb-5"${addAttribute(source, "src")}${addAttribute(name, "alt")}>
+    <img class="h-48 w-48 rounded-lg xl:h-56 xl:w-56 mb-5"${addAttribute(source, "src")}${addAttribute(name, "alt")}>
     <div class="w-100 flex flex-col text-gray-500">      
       <p>Color: ${color}</p>      
       <p>Gender: ${gender}</p>
@@ -2098,6 +2099,7 @@ const $$AvailablePuppies = createComponent(async ($$result, $$props, $$slots) =>
         pup.dad = puppy.dad;
         pup.mom = puppy.mom;
         pup.name = puppy.puppyName;
+        pup.gender = puppy.gender;
         let tmpSrc = puppy.puppyPicture?.asset?._ref;
         tmpSrc = tmpSrc.replace("image-", "");
         tmpSrc = tmpSrc.replace("-jpg", ".jpg");
@@ -2131,7 +2133,6 @@ const $$AvailablePuppies = createComponent(async ($$result, $$props, $$slots) =>
           } else {
             tmpSrc = tmpSrc?.replace("-png", ".png");
           }
-          console.log(tmpSrc);
           dog.pic = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
         }
         breedingDogsArray.push(dog);
@@ -2149,7 +2150,7 @@ const $$AvailablePuppies = createComponent(async ($$result, $$props, $$slots) =>
               Available Puppies
             </h1>
             <ul>
-              ${puppyArray.map((pup) => renderTemplate`${renderComponent($$result, "PuppyCard", $$PuppyCard, { "name": pup.name, "source": pup.pic, "birthday": pup.birthday, "color": pup.color, "mom": pup.mom, "dad": pup.dad })}`)}
+              ${puppyArray.map((pup) => renderTemplate`${renderComponent($$result, "PuppyCard", $$PuppyCard, { "name": pup.name, "source": pup.pic, "birthday": pup.birthday, "color": pup.color, "mom": pup.mom, "dad": pup.dad, "gender": pup.gender })}`)}
             </ul>
           </div>
         </section>
