@@ -2471,37 +2471,52 @@ const $$Blog = createComponent(async ($$result, $$props, $$slots) => {
     let response = await fetch(POST_URL);
     let resp = await response.json();
     for (let singlePost of resp.result) {
-      let post = {};
-      post.title = singlePost.title;
-      post.shortDesc = singlePost.shortDesc;
-      post.slug = singlePost.slug.current;
-      post.date = new Date(singlePost.publishedAt).toLocaleDateString("en-us", {
-        weekday: "long",
-        month: "long",
-        day: "numeric"
-      });
-      let tmpSrc = singlePost.mainImage.asset._ref;
-      tmpSrc = tmpSrc.replace("image-", "");
-      tmpSrc = tmpSrc.replace("-jpg", ".jpg");
-      post.imageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
-      let authorID = singlePost.author._ref;
-      let AUTHOR_QUERY = encodeURIComponent(
-        `*[_type=="author" && _id=="${authorID}"]`
-      );
-      let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${AUTHOR_QUERY}`;
-      let authorResp = await fetch(URL);
-      let authorResult = await authorResp.json();
-      post.author = authorResult.result[0].name;
-      let tmpAuthorImageSrc = authorResult.result[0].image.asset._ref;
-      tmpAuthorImageSrc = tmpAuthorImageSrc.replace("image-", "");
-      tmpAuthorImageSrc = tmpAuthorImageSrc.replace("-jpg", ".jpg");
-      post.authorImageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpAuthorImageSrc}`;
-      posts.push(post);
+      try {
+        let post = {
+          title: "",
+          author: "",
+          date: "",
+          imageSrc: "",
+          authorImageSrc: "",
+          shortDesc: "",
+          slug: ""
+        };
+        post.title = singlePost.title;
+        post.shortDesc = singlePost.shortDesc;
+        post.slug = singlePost.slug.current;
+        post.date = new Date(singlePost.publishedAt).toLocaleDateString("en-us", {
+          weekday: "long",
+          month: "long",
+          day: "numeric"
+        });
+        let tmpSrc = singlePost.mainImage.asset._ref;
+        tmpSrc = tmpSrc.replace("image-", "");
+        tmpSrc = tmpSrc.replace("-jpg", ".jpg");
+        tmpSrc = tmpSrc.replace("-png", ".png");
+        post.imageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
+        if (singlePost.author._ref) {
+          let authorID = singlePost.author._ref;
+          let AUTHOR_QUERY = encodeURIComponent(
+            `*[_type=="author" && _id=="${authorID}"]`
+          );
+          let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${AUTHOR_QUERY}`;
+          let authorResp = await fetch(URL);
+          let authorResult = await authorResp.json();
+          post.author = authorResult.result[0].name;
+          let tmpAuthorImageSrc = authorResult.result[0].image.asset._ref;
+          tmpAuthorImageSrc = tmpAuthorImageSrc.replace("image-", "");
+          tmpAuthorImageSrc = tmpAuthorImageSrc.replace("-jpg", ".jpg");
+          post.authorImageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpAuthorImageSrc}`;
+          posts.push(post);
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
   } catch (error) {
     console.error(error);
   }
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "The Bailey Bullblog", "metaDesc": " Our musings on French Bulldogs." }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="pt-16">
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "The Bailey BullBlog", "metaDesc": " Our musings on French Bulldogs." }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="pt-16">
     <div class="relative bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
       <div class="absolute inset-0">
         <div class="h-1/3 bg-white sm:h-2/3"></div>
@@ -2509,7 +2524,7 @@ const $$Blog = createComponent(async ($$result, $$props, $$slots) => {
       <div class="relative mx-auto max-w-7xl">
         <div class="text-center">
           <h2 class="text-3xl font-bold tracking-tight text-bailey-50 sm:text-4xl">
-          The Bailey Bullblog
+            The Bailey BullBlog
           </h2>
           <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
             Our musings on French Bulldogs

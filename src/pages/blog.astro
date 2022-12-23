@@ -31,51 +31,63 @@ const POST_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${D
 try {
   let response = await fetch(POST_URL);
   let resp = await response.json();
+  //console.log(resp);
 
   for (let singlePost: singlePost of resp.result) {
-    let post: iPost = {};
+    try {
+      let post: iPost = {
+        title: "",
+        author: "",
+        date: "",
+        imageSrc: "",
+        authorImageSrc: "",
+        shortDesc: "",
+        slug: "",
+      };
+      post.title = singlePost.title;
+      post.shortDesc = singlePost.shortDesc;
+      post.slug = singlePost.slug.current;
+      post.date = new Date(singlePost.publishedAt).toLocaleDateString("en-us", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      });
 
-    post.title = singlePost.title;
-    post.shortDesc = singlePost.shortDesc;
-    post.slug = singlePost.slug.current;
-    post.date = new Date(singlePost.publishedAt).toLocaleDateString("en-us", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-    });
+      // main image
+      let tmpSrc = singlePost.mainImage.asset._ref;
+      tmpSrc = tmpSrc.replace("image-", "");
+      tmpSrc = tmpSrc.replace("-jpg", ".jpg");
+      tmpSrc = tmpSrc.replace("-png", ".png");
+      post.imageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
 
-    // main image
-    let tmpSrc = singlePost.mainImage.asset._ref;
-    tmpSrc = tmpSrc.replace("image-", "");
-    tmpSrc = tmpSrc.replace("-jpg", ".jpg");
-    post.imageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpSrc}`;
+      // get author
+      if (singlePost.author._ref) {
+        let authorID = singlePost.author._ref;
+        let AUTHOR_QUERY = encodeURIComponent(
+          `*[_type=="author" && _id=="${authorID}"]`
+        );
 
-    // get author
-    let authorID = singlePost.author._ref;
-    let AUTHOR_QUERY = encodeURIComponent(
-      `*[_type=="author" && _id=="${authorID}"]`
-    );
+        let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${AUTHOR_QUERY}`;
+        let authorResp = await fetch(URL);
+        let authorResult = await authorResp.json();
+        post.author = authorResult.result[0].name;
 
-    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${AUTHOR_QUERY}`;
-    let authorResp = await fetch(URL);
-    let authorResult = await authorResp.json();
-    post.author = authorResult.result[0].name;
-
-    let tmpAuthorImageSrc = authorResult.result[0].image.asset._ref;
-    tmpAuthorImageSrc = tmpAuthorImageSrc.replace("image-", "");
-    tmpAuthorImageSrc = tmpAuthorImageSrc.replace("-jpg", ".jpg");
-    post.authorImageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpAuthorImageSrc}`;
-    posts.push(post);
+        let tmpAuthorImageSrc = authorResult.result[0].image.asset._ref;
+        tmpAuthorImageSrc = tmpAuthorImageSrc.replace("image-", "");
+        tmpAuthorImageSrc = tmpAuthorImageSrc.replace("-jpg", ".jpg");
+        post.authorImageSrc = `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${tmpAuthorImageSrc}`;
+        posts.push(post);
+      }
+    } catch (error: any) {
+      console.error(error);
+    }
   }
 } catch (error: any) {
   console.error(error);
 }
 ---
 
-<Layout
-  title="The Bailey Bullblog"
-  metaDesc=" Our musings on French Bulldogs."
->
+<Layout title="The Bailey BullBlog" metaDesc=" Our musings on French Bulldogs.">
   <main class="pt-16">
     <div
       class="relative bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
@@ -88,7 +100,7 @@ try {
           <h2
             class="text-3xl font-bold tracking-tight text-bailey-50 sm:text-4xl"
           >
-          The Bailey Bullblog
+            The Bailey BullBlog
           </h2>
           <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
             Our musings on French Bulldogs
