@@ -5,7 +5,7 @@ var contactUs = document.getElementById("contact-us");
 
 // on submit for contact
 if (contactUs !== null) {
-    contactUs.onsubmit = function (event) {
+    contactUs.onsubmit = async function (event) {
 
         let error = false;
         let errorDesc = "";
@@ -30,7 +30,7 @@ if (contactUs !== null) {
         }
 
         let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (!email.match(mailFormat)) { 
+        if (!email.match(mailFormat)) {
             errorDesc = "Email address does not contain correct format. (test@example.com)"
             error = true;
         }
@@ -47,11 +47,35 @@ if (contactUs !== null) {
             error = true;
         }
 
-        message = message + "<br/> sent from " + firstName + " " + lastName +
-            "<br/> email address: " + email;
+        //message = message + "<br/> sent from " + firstName + " " + lastName +
+        //    "<br/> email address: " + email;
 
         if (!error) {
-            SendEmail(subject, message);
+
+            try {
+                const resp = await fetch("./.netlify/functions/contact-email", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        from: "convirswebdesign@gmail.com",
+                        to: "trevor@convirswebdesign.com",
+                        subject: subject,
+                        parameters: {
+                            subject: subject,
+                            name: firstName + " " + lastName,                            
+                            email: email,
+                            message: message
+                        },
+                    }),
+                }
+                );
+                alert("Message has been sent.");
+
+            } catch (error) {
+                alert("Error has occurred, please email BaileyFrenchBulldogs@gmail.com directly.")
+                console.error(error);
+            }
+
+            //SendEmail(subject, message);
             // reset form
             document.getElementById('first-name').value = "";
             document.getElementById('last-name').value = "";
