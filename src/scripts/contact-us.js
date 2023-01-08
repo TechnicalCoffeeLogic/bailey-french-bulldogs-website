@@ -57,7 +57,7 @@ if (contactUs !== null) {
                     method: "POST",
                     body: JSON.stringify({
                         from: "convirswebdesign@gmail.com",
-                        to: "trevor@convirswebdesign.com",
+                        to: "baileyfrenchbulldogs@gmail.com",
                         subject: subject,
                         parameters: {
                             subject: subject,
