@@ -12,7 +12,7 @@ interface iPost {
   slug?: string;
 }
 
-interface singlePost {
+interface iSinglePost {
   title: string;
   date: string | number | Date;
   mainImage: { asset: { _ref: any } };
@@ -33,7 +33,7 @@ try {
   let resp = await response.json();
   //console.log(resp);
 
-  for (let singlePost: singlePost of resp.result) {
+  for (let singlePost of resp.result) {
     try {
       let post: iPost = {
         title: "",
