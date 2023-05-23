@@ -133,7 +133,7 @@ try {
 }
 ---
 
-<Layout title={title} metaDesc={shortDesc} ogType={"article"} ogImage={post.image}>
+<Layout title={title} metaDesc={title} ogType={"article"} ogImage={post.image}>
   <main class="bg-white">
     <section class="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col">
@@ -145,13 +145,21 @@ try {
         <p class="block text-center text-lg font-semibold text-bailey-50">
           {post.author}
         </p>
-        <div class="w-full flex justify-center py-4">
-          <img src={post.image} class="rounded-lg" />
-        </div>
-        <article class="mx-auto mt-6 text-gray-500" set:html={post.body} />
+        <!-- <div class="w-full flex justify-center py-4">
+          { post.image ? 
+            <img src={post.image} class="rounded-lg" /> 
+            :
+            <p></p>
+          }
+        </div> -->
+        <article class="mx-auto mt-6 text-gray-500 image-size" set:html={post.body} />
       </div>
     </section>
   </main>
 </Layout>
 
-<script></script>
+<style is:global>
+  .image-size, img {
+    
+  }
+</style>
